@@ -8,6 +8,13 @@
 import Foundation
 
 
-struct User {
+class Domain {
+    
+}
+
+class UserModel : Domain {
     let name : String
+    init(name : String) {
+        self.name = name
+    }
 }

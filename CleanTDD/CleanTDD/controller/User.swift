@@ -9,7 +9,9 @@ import Foundation
 
 
 extension User {
+    
     func signUp() -> User{
-        return createUser(name:"Simon")
+
+//        return createUser(name:"Simon")
     }
 }

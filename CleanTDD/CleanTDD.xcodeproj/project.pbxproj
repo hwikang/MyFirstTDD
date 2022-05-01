@@ -15,9 +15,13 @@
 		BF63F6A2281E94D900AAD17D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF63F6A0281E94D900AAD17D /* LaunchScreen.storyboard */; };
 		BF63F6AD281E94D900AAD17D /* CleanTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F6AC281E94D900AAD17D /* CleanTDDTests.swift */; };
 		BF63F6B8281E94DA00AAD17D /* CleanTDDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F6B7281E94DA00AAD17D /* CleanTDDUITests.swift */; };
-		BF63F700281E968A00AAD17D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F6FC281E968A00AAD17D /* User.swift */; };
+		BF63F700281E968A00AAD17D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F6FC281E968A00AAD17D /* UserService.swift */; };
 		BF63F701281E968A00AAD17D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F6FF281E968A00AAD17D /* Entity.swift */; };
 		BF63F706281E96A100AAD17D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F705281E96A100AAD17D /* User.swift */; };
+		BF63F70F281E98B900AAD17D /* ORM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F70E281E98B900AAD17D /* ORM.swift */; };
+		BF63F718281E998C00AAD17D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF63F716281E998C00AAD17D /* Model.xcdatamodeld */; };
+		BF63F71E281E9A5800AAD17D /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F71D281E9A5800AAD17D /* UserRepositoryInterface.swift */; };
+		BF63F727281E9B5000AAD17D /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63F726281E9B5000AAD17D /* UserRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +56,13 @@
 		BF63F6B3281E94DA00AAD17D /* CleanTDDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanTDDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF63F6B7281E94DA00AAD17D /* CleanTDDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTDDUITests.swift; sourceTree = "<group>"; };
 		BF63F6B9281E94DA00AAD17D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF63F6FC281E968A00AAD17D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF63F6FC281E968A00AAD17D /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		BF63F6FF281E968A00AAD17D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		BF63F705281E96A100AAD17D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF63F70E281E98B900AAD17D /* ORM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORM.swift; sourceTree = "<group>"; };
+		BF63F717281E998C00AAD17D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BF63F71D281E9A5800AAD17D /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
+		BF63F726281E9B5000AAD17D /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,7 @@
 		BF63F6FA281E968A00AAD17D /* application */ = {
 			isa = PBXGroup;
 			children = (
+				BF63F71C281E9A4700AAD17D /* interface */,
 				BF63F6FB281E968A00AAD17D /* service */,
 			);
 			path = application;
@@ -157,7 +166,7 @@
 		BF63F6FB281E968A00AAD17D /* service */ = {
 			isa = PBXGroup;
 			children = (
-				BF63F6FC281E968A00AAD17D /* User.swift */,
+				BF63F6FC281E968A00AAD17D /* UserService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 		BF63F6FD281E968A00AAD17D /* infra */ = {
 			isa = PBXGroup;
 			children = (
+				BF63F70D281E98AE00AAD17D /* db */,
 			);
 			path = infra;
 			sourceTree = "<group>";
@@ -175,6 +185,32 @@
 				BF63F6FF281E968A00AAD17D /* Entity.swift */,
 			);
 			path = domain;
+			sourceTree = "<group>";
+		};
+		BF63F70D281E98AE00AAD17D /* db */ = {
+			isa = PBXGroup;
+			children = (
+				BF63F725281E9B4200AAD17D /* repository */,
+				BF63F70E281E98B900AAD17D /* ORM.swift */,
+				BF63F716281E998C00AAD17D /* Model.xcdatamodeld */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		BF63F71C281E9A4700AAD17D /* interface */ = {
+			isa = PBXGroup;
+			children = (
+				BF63F71D281E9A5800AAD17D /* UserRepositoryInterface.swift */,
+			);
+			path = interface;
+			sourceTree = "<group>";
+		};
+		BF63F725281E9B4200AAD17D /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				BF63F726281E9B5000AAD17D /* UserRepository.swift */,
+			);
+			path = repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +343,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF63F700281E968A00AAD17D /* User.swift in Sources */,
+				BF63F70F281E98B900AAD17D /* ORM.swift in Sources */,
+				BF63F700281E968A00AAD17D /* UserService.swift in Sources */,
+				BF63F71E281E9A5800AAD17D /* UserRepositoryInterface.swift in Sources */,
 				BF63F706281E96A100AAD17D /* User.swift in Sources */,
+				BF63F718281E998C00AAD17D /* Model.xcdatamodeld in Sources */,
 				BF63F701281E968A00AAD17D /* Entity.swift in Sources */,
 				BF63F69A281E94D900AAD17D /* ViewController.swift in Sources */,
 				BF63F696281E94D900AAD17D /* AppDelegate.swift in Sources */,
+				BF63F727281E9B5000AAD17D /* UserRepository.swift in Sources */,
 				BF63F698281E94D900AAD17D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +685,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BF63F716281E998C00AAD17D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF63F717281E998C00AAD17D /* Model.xcdatamodel */,
+			);
+			currentVersion = BF63F717281E998C00AAD17D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BF63F68A281E94D900AAD17D /* Project object */;
 }
