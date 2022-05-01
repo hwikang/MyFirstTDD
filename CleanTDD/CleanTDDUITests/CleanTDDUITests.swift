@@ -1,13 +1,13 @@
 //
-//  MyFirstTDDUITests.swift
-//  MyFirstTDDUITests
+//  CleanTDDUITests.swift
+//  CleanTDDUITests
 //
 //  Created by 슈퍼 on 2022/05/01.
 //
 
 import XCTest
 
-class MyFirstTDDUITests: XCTestCase {
+class CleanTDDUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
