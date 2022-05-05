@@ -9,6 +9,6 @@ import Foundation
 
 
 protocol AbstractRepository{
-    associatedtype ReturnType
-    func create()-> ReturnType
+    associatedtype T : Domain
+    func create(model :T) -> T
 }

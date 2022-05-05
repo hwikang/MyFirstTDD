@@ -9,12 +9,17 @@ import Foundation
 
 
 class UserService {
-    let repo : AbstractRepository
-    init(repo:AbstractRepository) {
+    let repo : UserRepository
+    init(repo:UserRepository) {
         self.repo = repo
     }
     
     func createUser(name:String) -> UserModel{
-        return UserModel(name:name)
+        let _user = UserModel(name:name)
+        let user = self.repo.create(model: _user)
+        return user
     }
+
 }
+
+

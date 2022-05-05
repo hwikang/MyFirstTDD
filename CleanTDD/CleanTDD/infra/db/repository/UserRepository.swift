@@ -9,9 +9,11 @@ import Foundation
 
 
 class UserRepository: AbstractRepository{
-   
-    typealias ReturnType = UserModel
-    override func create() -> UserModel {
-        //DB 저장할 실제 구현체 
+ 
+    typealias Model = UserModel
+    
+    func create(model:UserModel) -> UserModel {
+        return UserModel(name: model.name)
     }
+    
 }

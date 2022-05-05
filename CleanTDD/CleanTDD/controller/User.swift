@@ -8,10 +8,11 @@
 import Foundation
 
 
-extension User {
+extension UserModel {
     
-    func signUp() -> User{
-
-//        return createUser(name:"Simon")
+    func signUp() -> UserModel{
+        let userService = UserService(repo: UserRepository())
+        
+        return userService.createUser(name:"Simon")
     }
 }
